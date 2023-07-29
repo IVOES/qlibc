@@ -1,0 +1,359 @@
+src/containers/qhasharr.c:380:17: style: Local variable 'idx' shadows outer variable [shadowVariable]
+            int idx = find_avail(tbl, hash);
+                ^
+src/containers/qhasharr.c:373:13: note: Shadowed declaration
+        int idx = get_idx(tbl, name, namesize, hash);
+            ^
+src/containers/qhasharr.c:380:17: note: Shadow variable
+            int idx = find_avail(tbl, hash);
+                ^
+src/containers/qhasharr.c:981:12: portability: 'dp' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        dp += tblslots[newidx].datasize;
+           ^
+src/containers/qhasharr.c:1042:57: portability: 'data' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+            memcpy(tblslots[newidx].data.ext.data, data + savesize, copysize);
+                                                        ^
+src/containers/qhasharr.c:1048:58: portability: 'data' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+            memcpy(tblslots[newidx].data.pair.data, data + savesize, copysize);
+                                                         ^
+src/containers/qhashtbl.c:593:19: style: Variable 'obj->size' is reassigned a value before the old one has been used. [redundantAssignment]
+        obj->size = cursor->size;
+                  ^
+src/containers/qhashtbl.c:587:23: note: obj->size is assigned
+            obj->size = cursor->size;
+                      ^
+src/containers/qhashtbl.c:593:19: note: obj->size is overwritten
+        obj->size = cursor->size;
+                  ^
+src/containers/qlist.c:852:9: portability: Returning an integer in a function with pointer return type is not portable. [CastIntegerToAddressAtReturn]
+        return false;
+        ^
+src/containers/qlist.c:862:13: portability: Returning an integer in a function with pointer return type is not portable. [CastIntegerToAddressAtReturn]
+            return false;
+            ^
+src/containers/qlist.c:602:17: style: Condition 'cont!=NULL' is always true [knownConditionTrueFalse]
+    while (cont != NULL) {
+                ^
+src/containers/qlist.c:595:14: note: Assuming that condition 'cont==NULL' is not redundant
+    if (cont == NULL) {
+             ^
+src/containers/qlist.c:602:17: note: Condition 'cont!=NULL' is always true
+    while (cont != NULL) {
+                ^
+src/containers/qlist.c:278:30: style: Checking if unsigned expression 'size' is less than zero. [unsignedLessThanZero]
+    if (data == NULL || size <= 0) {
+                             ^
+src/containers/qlist.c:724:12: portability: 'dp' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        dp += obj->size;
+           ^
+src/containers/qlist.c:771:12: portability: 'dp' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        dp += size;
+           ^
+src/containers/qlisttbl.c:1055:9: portability: Returning an integer in a function with pointer return type is not portable. [CastIntegerToAddressAtReturn]
+        return false;
+        ^
+src/containers/qlisttbl.c:521:13: error: Common realloc mistake: 'objs' nulled but not freed upon failure [memleakOnRealloc]
+            objs = (qlisttbl_data_t *)realloc(objs, sizeof(qlisttbl_data_t) * allocobjs);
+            ^
+src/containers/qlisttbl.c:832:12: style: The scope of the variable 'n2' can be reduced. [variableScope]
+    int n, n2, i;
+           ^
+src/containers/qlisttbl.c:1053:46: style: Checking if unsigned expression 'size' is less than zero. [unsignedLessThanZero]
+    if (name == NULL || data == NULL || size <= 0) {
+                                             ^
+src/containers/qlisttbl.c:530:26: style: Local variable 'newobj' shadows outer function [shadowFunction]
+        qlisttbl_data_t *newobj = &objs[numfound - 1];
+                         ^
+src/containers/qlisttbl.c:118:24: note: Shadowed declaration
+static qlisttbl_obj_t *newobj(const char *name, const void *data, size_t size);
+                       ^
+src/containers/qlisttbl.c:530:26: note: Shadow variable
+        qlisttbl_data_t *newobj = &objs[numfound - 1];
+                         ^
+src/containers/qvector.c:318:20: style: Redundant initialization for 'newmax'. The initialized value is overwritten before it is read. [redundantInitialization]
+            newmax = (vector->max + 1) * 2;
+                   ^
+src/containers/qvector.c:316:23: note: newmax is initialized
+        size_t newmax = vector->max + 1;
+                      ^
+src/containers/qvector.c:318:20: note: newmax is overwritten
+            newmax = (vector->max + 1) * 2;
+                   ^
+src/extensions/qaconf.c:959:9: warning: Either the condition 'qaconf==NULL' is redundant or there is possible null pointer dereference: qaconf. [nullPointerRedundantCheck]
+    if (qaconf->errstr != NULL)
+        ^
+src/extensions/qaconf.c:439:16: note: Assuming that condition 'qaconf==NULL' is not redundant
+    if (qaconf == NULL || options == NULL) {
+               ^
+src/extensions/qaconf.c:440:20: note: Calling function '_seterrmsg', 1st argument 'qaconf' value is 0
+        _seterrmsg(qaconf, "Invalid parameters.");
+                   ^
+src/extensions/qaconf.c:959:9: note: Null pointer dereference
+    if (qaconf->errstr != NULL)
+        ^
+src/extensions/qaconf.c:961:22: warning: Either the condition 'qaconf==NULL' is redundant or there is possible null pointer dereference: qaconf. [nullPointerRedundantCheck]
+    DYNAMIC_VSPRINTF(qaconf->errstr, format);
+                     ^
+src/extensions/qaconf.c:439:16: note: Assuming that condition 'qaconf==NULL' is not redundant
+    if (qaconf == NULL || options == NULL) {
+               ^
+src/extensions/qaconf.c:440:20: note: Calling function '_seterrmsg', 1st argument 'qaconf' value is 0
+        _seterrmsg(qaconf, "Invalid parameters.");
+                   ^
+src/extensions/qaconf.c:961:22: note: Null pointer dereference
+    DYNAMIC_VSPRINTF(qaconf->errstr, format);
+                     ^
+src/extensions/qdatabase.c:171:5: style:inconclusive: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+    if (dbtype == NULL
+    ^
+src/extensions/qdatabase.c:167:16: warning: Either the condition 'dbtype==NULL' is redundant or there is possible null pointer dereference: dbtype. [nullPointerRedundantCheck]
+    if (strcmp(dbtype, "MYSQL")) return NULL;
+               ^
+src/extensions/qdatabase.c:171:16: note: Assuming that condition 'dbtype==NULL' is not redundant
+    if (dbtype == NULL
+               ^
+src/extensions/qdatabase.c:167:16: note: Null pointer dereference
+    if (strcmp(dbtype, "MYSQL")) return NULL;
+               ^
+src/extensions/qhttpclient.c:1118:9: warning: Assignment of function parameter has no effect outside the function. Did you forget dereferencing it? [uselessAssignmentPtrArg]
+        reqheaders = NULL;
+        ^
+src/extensions/qhttpclient.c:394:61: style:inconclusive: Function 'setuseragent' argument 2 names different: declaration 'agentname' definition 'useragent'. [funcArgNamesDifferent]
+static void setuseragent(qhttpclient_t *client, const char *useragent) {
+                                                            ^
+src/extensions/qhttpclient.c:148:61: note: Function 'setuseragent' argument 2 names different: declaration 'agentname' definition 'useragent'.
+static void setuseragent(qhttpclient_t *client, const char *agentname);
+                                                            ^
+src/extensions/qhttpclient.c:394:61: note: Function 'setuseragent' argument 2 names different: declaration 'agentname' definition 'useragent'.
+static void setuseragent(qhttpclient_t *client, const char *useragent) {
+                                                            ^
+src/extensions/qhttpclient.c:1148:36: portability: 'content' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+                *(char *) (content + clength) = '\0';
+                                   ^
+src/extensions/qhttpclient.c:1449:48: portability: 'buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+                rsize = SSL_read(ssl->ssl, buf + total, nbytes - total);
+                                               ^
+src/extensions/qhttpclient.c:1498:49: portability: 'buf' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+            int wsize = SSL_write(ssl->ssl, buf + total, nbytes - total);
+                                                ^
+src/ipc/qshm.c:157:12: warning: Identical condition and return expression 'pShm==(void*)-1', return value is always 0 [identicalConditionAfterEarlyExit]
+    return pShm;
+           ^
+src/ipc/qshm.c:155:14: note: If condition 'pShm==(void*)-1' is true, the function will return/exit
+    if (pShm == (void *) -1)
+             ^
+src/ipc/qshm.c:157:12: note: Returning identical expression 'pShm==(void*)-1'
+    return pShm;
+           ^
+src/utilities/qencode.c:157:32: portability: 'bin' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    const char *pBinEnd = (bin + size - 1);
+                               ^
+src/utilities/qencode.c:157:39: portability: 'bin+size' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    const char *pBinEnd = (bin + size - 1);
+                                      ^
+src/utilities/qencode.c:269:62: portability: 'bin' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    unsigned char *pBinPt, *pBinEnd = (unsigned char *) (bin + size - 1);
+                                                             ^
+src/utilities/qencode.c:269:69: portability: 'bin+size' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    unsigned char *pBinPt, *pBinEnd = (unsigned char *) (bin + size - 1);
+                                                                    ^
+src/utilities/qfile.c:487:18: style: The if condition is the same as the previous if condition [duplicateCondition]
+        if (nLen > 2) {
+                 ^
+src/utilities/qfile.c:479:18: note: First condition
+        if (nLen > 2) {
+                 ^
+src/utilities/qfile.c:487:18: note: Second condition
+        if (nLen > 2) {
+                 ^
+src/utilities/qhash.c:272:51: portability: 'data' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    const uint8_t *tail = (const uint8_t *) (data + (nblocks * 4));
+                                                  ^
+src/utilities/qhash.c:344:51: portability: 'data' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    const uint8_t *tail = (const uint8_t *) (data + (nblocks * 16));
+                                                  ^
+src/utilities/qio.c:127:38: portability: 'buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        ssize_t rsize = read(fd, buf + total, nbytes - total);
+                                     ^
+src/utilities/qio.c:167:39: portability: 'buf' is of type 'const void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        ssize_t wsize = write(fd, buf + total, nbytes - total);
+                                      ^
+tests/test_qhasharr_darkdh.c:58:8: style: The scope of the variable 'j' can be reduced. [variableScope]
+int i, j;
+       ^
+tests/test_qlist.c:273:16: portability: 'dstart' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+        dstart += dsize;
+               ^
+tests/test_qqueue.c:227:11: style: The scope of the variable 'array_data' can be reduced. [variableScope]
+    void *array_data;
+          ^
+tests/test_qstack.c:218:11: style: The scope of the variable 'array_data' can be reduced. [variableScope]
+    void *array_data;
+          ^
+tests/test_qtreetbl.c:401:18: style: The scope of the variable 'pos' can be reduced. [variableScope]
+    int i, j, k, pos, x = 1, level = 0;
+                 ^
+src/extensions/qaconf.c:959:9: warning: Null pointer dereference: qaconf [ctunullpointer]
+    if (qaconf->errstr != NULL)
+        ^
+src/extensions/qaconf.c:439:16: note: Assuming that condition 'qaconf==NULL' is not redundant
+
+               ^
+src/extensions/qaconf.c:440:19: note: Calling function _seterrmsg, 1st argument is null
+        _seterrmsg(qaconf, "Invalid parameters.");
+                  ^
+src/extensions/qaconf.c:959:9: note: Dereferencing argument qaconf that is null
+    if (qaconf->errstr != NULL)
+        ^
+examples/apacheconf.c:122:0: style: The function 'QAC_CB' is never used. [unusedFunction]
+
+^
+src/utilities/qencode.c:308:0: style: The function 'qbase64_decode' is never used. [unusedFunction]
+
+^
+src/utilities/qencode.c:249:0: style: The function 'qbase64_encode' is never used. [unusedFunction]
+
+^
+src/utilities/qcount.c:124:0: style: The function 'qcount_update' is never used. [unusedFunction]
+
+^
+src/extensions/qdatabase.c:162:0: style: The function 'qdb' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:530:0: style: The function 'qfile_abspath' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:337:0: style: The function 'qfile_check_path' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:122:0: style: The function 'qfile_exist' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:386:0: style: The function 'qfile_get_ext' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:410:0: style: The function 'qfile_get_size' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:74:0: style: The function 'qfile_lock' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:283:0: style: The function 'qfile_save' is never used. [unusedFunction]
+
+^
+src/utilities/qfile.c:98:0: style: The function 'qfile_unlock' is never used. [unusedFunction]
+
+^
+src/utilities/qhash.c:192:0: style: The function 'qhashfnv1_32' is never used. [unusedFunction]
+
+^
+src/utilities/qhash.c:223:0: style: The function 'qhashfnv1_64' is never used. [unusedFunction]
+
+^
+src/utilities/qhash.c:335:0: style: The function 'qhashmurmur3_128' is never used. [unusedFunction]
+
+^
+src/utilities/qencode.c:426:0: style: The function 'qhex_decode' is never used. [unusedFunction]
+
+^
+src/extensions/qhttpclient.c:245:0: style: The function 'qhttpclient' is never used. [unusedFunction]
+
+^
+src/utilities/qio.c:301:0: style: The function 'qio_puts' is never used. [unusedFunction]
+
+^
+src/utilities/qio.c:199:0: style: The function 'qio_send' is never used. [unusedFunction]
+
+^
+src/extensions/qlog.c:105:0: style: The function 'qlog' is never used. [unusedFunction]
+
+^
+src/utilities/qencode.c:62:0: style: The function 'qparse_queries' is never used. [unusedFunction]
+
+^
+src/ipc/qsem.c:285:0: style: The function 'qsem_check' is never used. [unusedFunction]
+
+^
+src/ipc/qsem.c:180:0: style: The function 'qsem_enter' is never used. [unusedFunction]
+
+^
+src/ipc/qsem.c:232:0: style: The function 'qsem_enter_force' is never used. [unusedFunction]
+
+^
+src/ipc/qsem.c:102:0: style: The function 'qsem_init' is never used. [unusedFunction]
+
+^
+src/ipc/qshm.c:149:0: style: The function 'qshm_get' is never used. [unusedFunction]
+
+^
+src/ipc/qshm.c:91:0: style: The function 'qshm_init' is never used. [unusedFunction]
+
+^
+src/utilities/qsocket.c:109:0: style: The function 'qsocket_close' is never used. [unusedFunction]
+
+^
+src/utilities/qsocket.c:155:0: style: The function 'qsocket_get_localaddr' is never used. [unusedFunction]
+
+^
+src/utilities/qsocket.c:65:0: style: The function 'qsocket_open' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:684:0: style: The function 'qstr_comma_number' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:859:0: style: The function 'qstr_conv_encoding' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:760:0: style: The function 'qstr_is_email' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:818:0: style: The function 'qstr_is_ip4addr' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:379:0: style: The function 'qstrdup_between' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:461:0: style: The function 'qstrgets' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:493:0: style: The function 'qstrrev' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:622:0: style: The function 'qstrtokenizer' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:149:0: style: The function 'qstrunchar' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:653:0: style: The function 'qstrunique' is never used. [unusedFunction]
+
+^
+src/utilities/qstring.c:516:0: style: The function 'qstrupper' is never used. [unusedFunction]
+
+^
+src/utilities/qtime.c:191:0: style: The function 'qtime_gmt_staticstr' is never used. [unusedFunction]
+
+^
+src/utilities/qtime.c:122:0: style: The function 'qtime_localtime_staticstr' is never used. [unusedFunction]
+
+^
+src/utilities/qtime.c:103:0: style: The function 'qtime_localtime_str' is never used. [unusedFunction]
+
+^
+src/utilities/qtime.c:217:0: style: The function 'qtime_parse_gmtstr' is never used. [unusedFunction]
+
+^
+src/extensions/qtokenbucket.c:93:0: style: The function 'qtokenbucket_consume' is never used. [unusedFunction]
+
+^
+src/extensions/qtokenbucket.c:76:0: style: The function 'qtokenbucket_init' is never used. [unusedFunction]
+
+^
+src/extensions/qtokenbucket.c:109:0: style: The function 'qtokenbucket_waittime' is never used. [unusedFunction]
+
+^
+src/containers/qtreetbl.c:906:0: style: The function 'qtreetbl_print' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
